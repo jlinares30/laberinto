@@ -1,0 +1,3 @@
+D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.vcxproj.AssemblyReference.cache
+D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
+D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.exe

@@ -1,0 +1,7 @@
+﻿  TF.cpp
+D:\Jorge\intro Algoritmos\hito2\TF\personaje.h(18,21): warning C4129: '|': secuencia de escape de carácter no reconocida
+D:\Jorge\intro Algoritmos\hito2\TF\personaje.h(19,19): warning C4566: el carácter representado por el nombre de carácter universal '\uFFE3' no se puede representar en la página de códigos actual (1252)
+D:\Jorge\intro Algoritmos\hito2\TF\jugar.h(24,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+D:\Jorge\intro Algoritmos\hito2\TF\jugar.h(25,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  TF.vcxproj -> D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.exe
