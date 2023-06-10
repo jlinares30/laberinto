@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <Windows.h>
 #include "enemigo.h"
+#include "aliado.h"
 #include "personaje.h"
 #include "mapa.h"
 
@@ -10,8 +11,11 @@
 void iniciarJuego() {
     Personaje* personaje = new Personaje();
     Enemigo* enemigo = new Enemigo();
+    Aliado* aliado = new Aliado();
     int posX = 0;
     int posY = 1;
+    int posAliadoX = 25;
+    int posAliadoY = 2;
     // Generar posición inicial del enemigo
     int enemigoX;
     int enemigoY;
@@ -29,6 +33,7 @@ void iniciarJuego() {
 
     generarMapa(mapa);
     dibujarPersonaje(personaje, posX, posY);
+    dibujarAliado(aliado, posAliadoX, posAliadoY);
 
     while (1) {
         if (kbhit()) {
