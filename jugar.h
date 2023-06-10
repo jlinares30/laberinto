@@ -2,39 +2,49 @@
 
 #include <conio.h>
 #include <Windows.h>
+#include "enemigo.h"
 #include "personaje.h"
 #include "mapa.h"
 
-void jugar() {
+
+void iniciarJuego() {
     Personaje* personaje = new Personaje();
-    int posX = 1;
-    int posY = 25;
+    Enemigo* enemigo = new Enemigo();
+    int posX = 0;
+    int posY = 1;
+    // Generar posición inicial del enemigo
+    int enemigoX;
+    int enemigoY;
+    do
+    {
+        enemigoX = rand() % 118 + 1;
+        enemigoY = rand() % 28 + 1;
+    } while (mapa[enemigoY][enemigoX] == 1);
+    
+
 
     personaje->balas = new Bala[MAX_BALAS];
     personaje->numBalas = 0;
 
 
-
     generarMapa(mapa);
     dibujarPersonaje(personaje, posX, posY);
-
-
 
     while (1) {
         if (kbhit()) {
             char tecla = getch();
 
-            if (tecla == DERECHA && mapa[posY][posX + 3] == 0) {
+            if (tecla == DERECHA && (mapa[posY][posX + 3] == 0 && mapa[posY + 1][posX + 3] == 0 && mapa[posY + 2][posX + 3] == 0)) {
                 borrarPersonaje(personaje, posX, posY);
                 posX++;
             }
 
-            if (tecla == IZQUIERDA && mapa[posY][posX - 1] == 0)
+            if (tecla == IZQUIERDA && (mapa[posY][posX - 1] == 0 && mapa[posY + 1][posX - 1] == 0 && mapa[posY + 2][posX - 1] == 0))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posX--;
             }
-            if (tecla == ARRIBA && (mapa[posY - 3][posX] == 0 && mapa[posY - 3][posX + 1] == 0 && mapa[posY - 3][posX + 2] == 0))
+            if (tecla == ARRIBA && (mapa[posY - 1][posX] == 0 && mapa[posY - 1][posX + 1] == 0 && mapa[posY - 1][posX + 2] == 0))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posY--;
@@ -56,6 +66,43 @@ void jugar() {
         }
 
         dibujarPersonaje(personaje, posX, posY);
+        
+        // movimiento aleatorio del enemigo
+
+        dibujarEnemigo(enemigo, enemigoX, enemigoY);
+
+
+        int direccion = rand() % 4;  
+
+        switch (direccion) {
+        case 0:  // Izquierda
+            if (mapa[enemigoY][enemigoX - 1] == 0 && mapa[enemigoY + 1][enemigoX - 1] == 0 && mapa[enemigoY + 2][enemigoX - 1] == 0) {
+                eliminarEnemigo(enemigo, enemigoX, enemigoY);
+                enemigoX--;
+            }
+            break;
+        case 1:  // Derecha
+            if (mapa[enemigoY][enemigoX + 3] == 0 && mapa[enemigoY + 1][enemigoX + 3] == 0 && mapa[enemigoY + 2][enemigoX + 3] == 0) {
+                eliminarEnemigo(enemigo, enemigoX, enemigoY);
+                enemigoX++;
+            }
+            break;
+        case 2:  // Arriba
+            if (mapa[enemigoY - 1][enemigoX] == 0 && mapa[enemigoY - 1][enemigoX + 1] == 0 && mapa[enemigoY - 1][enemigoX + 2] == 0) {
+                eliminarEnemigo(enemigo, enemigoX, enemigoY);
+                enemigoY--;
+            }
+            break;
+        case 3:  // Abajo
+            if (mapa[enemigoY + 3][enemigoX] == 0 && mapa[enemigoY + 3][enemigoX + 1] == 0 && mapa[enemigoY + 3][enemigoX + 2] == 0) {
+                eliminarEnemigo(enemigo, enemigoX, enemigoY);
+                enemigoY++;
+            }
+            break;
+        }
+
+        dibujarEnemigo(enemigo, enemigoX, enemigoY);
+
 
         Sleep(100);
     }

@@ -1,3 +1,6 @@
 D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.vcxproj.AssemblyReference.cache
 D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
 D:\Jorge\intro Algoritmos\hito2\TF\x64\Debug\TF.exe
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\x64\Debug\TF.vcxproj.AssemblyReference.cache
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\x64\Debug\TF.exe

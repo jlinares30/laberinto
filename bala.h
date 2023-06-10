@@ -3,6 +3,7 @@
 #include "iostream"
 #include "mapa.h"
 #include "color.h"
+#include "enemigo.h"
 
 using namespace System;
 using namespace std;
@@ -16,6 +17,7 @@ struct Bala {
     char caracter = '*';
 
 };
+
 
 
 void dibujarBala(Bala* bala, int posX, int posY) {
@@ -33,15 +35,11 @@ void borrarBala(Bala* bala, int posX, int posY) {
     cout << " ";
 }
 
-
 void moverBala(Bala& bala, int mapa[FILAS][COLUMNAS], int& numBalas, int index, Bala* balas) {
     borrarBala(&bala, bala.x, bala.y);
 
     if (mapa[bala.y][bala.x + 1] == 1) {
-        char caracterOriginal = (char)219;
-        asignarPosicion(bala.x, bala.y);
-        asignarColor(13);
-        cout << caracterOriginal;
+        borrarBala(&bala, bala.x, bala.y);
 
         for (int j = index; j < numBalas - 1; j++) {
             balas[j] = balas[j + 1];
@@ -61,7 +59,7 @@ void moverBala(Bala& bala, int mapa[FILAS][COLUMNAS], int& numBalas, int index, 
         }
         else {
             asignarPosicion(bala.x, bala.y);
-            asignarColor(15);
+            asignarColor(10);
             dibujarBala(&bala, bala.x, bala.y);
         }
     }

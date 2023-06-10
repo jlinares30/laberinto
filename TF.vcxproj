@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="bala.h" />
     <ClInclude Include="color.h" />
+    <ClInclude Include="enemigo.h" />
     <ClInclude Include="jugar.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="mapa.h" />

@@ -3,18 +3,32 @@
 #include <iostream>
 #include <windows.h>
 #include "color.h"
+#include "jugar.h"
 
 
 using namespace std;
 
-// Función para establecer el color del texto en la consola de Windows
-void setColor(int color);
+void jugar()
+{
+    cout << "Iniciando el juego..." << endl;
+    // Aquí puedes llamar a la función para empezar el juego
+}
 
-void jugar();
-
-void mostrarHistoria();
-void mostrarInstrucciones();
-void mostrarCreditos();
+void mostrarHistoria()
+{
+    cout << "Historia del juego..." << endl;
+    // Aquí puedes mostrar la historia del juego
+}
+void mostrarInstrucciones()
+{
+    cout << "Instrucciones del juego..." << endl;
+    // Aquí puedes mostrar las instrucciones del juego
+}
+void mostrarCreditos()
+{
+    cout << "Créditos del juego..." << endl;
+    // Aquí puedes mostrar los créditos del juego
+}
 
 void mostrarMenu()
 {
@@ -42,7 +56,7 @@ void mostrarMenu()
     // Restaurar el color predeterminado
     asignarColor(7); // Blanco
 }
-int main()
+int mainMenu()
 {
     int opcion;
 
@@ -58,6 +72,7 @@ int main()
         {
         case 1:
             jugar();
+            iniciarJuego();
             // Aquí puedes llamar a la función para empezar el juego
             break;
         case 2:
@@ -84,34 +99,6 @@ int main()
 
 
     } while (opcion != 5);
-
+    exit(0);
     return 0;
-}
-void setColor(int color)
-{
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, color);
-}
-void jugar()
-{
-    cout << "Iniciando el juego..." << endl;
-    // Aquí puedes llamar a la función para empezar el juego
-}
-
-void mostrarHistoria()
-{
-    cout << "Historia del juego..." << endl;
-    // Aquí puedes mostrar la historia del juego
-}
-
-void mostrarInstrucciones()
-{
-    cout << "Instrucciones del juego..." << endl;
-    // Aquí puedes mostrar las instrucciones del juego
-}
-
-void mostrarCreditos()
-{
-    cout << "Créditos del juego..." << endl;
-    // Aquí puedes mostrar los créditos del juego
 }

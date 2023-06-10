@@ -14,9 +14,10 @@ const int IZQUIERDA = 75;
 struct Personaje {
     int x;
     int y;
-    string cabeza = "°w°";
-    string cuerpo = "\||/";
-    string pies = " >￣> ";
+    string cabeza = "/O\\";
+    string cuerpo = "| |";
+    string pies =   "|=|";
+
     Bala* balas; // Agregar el atributo Bala* balas al struct
     int numBalas; // Agregar el atributo numBalas para llevar cuenta de las balas
 };
@@ -38,11 +39,11 @@ void borrarPersonaje(Personaje* personaje, int posX, int posY) {
     personaje->y = posY;
     asignarColor(8);
     asignarPosicion(personaje->x, personaje->y);
-    cout << string(5, ' ');
+    cout << string(3, ' ');
     asignarPosicion(personaje->x, personaje->y + 1);
-    cout << string(5, ' ');
+    cout << string(3, ' ');
     asignarPosicion(personaje->x, personaje->y + 2);
-    cout << string(5, ' ');
+    cout << string(3, ' ');
 }
 
 void disparar(Personaje* personaje) {
