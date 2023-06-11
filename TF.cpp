@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+    //setlocale(LC_ALL, "spanish");
     srand(time(0));
     mainMenu();
     system("pause>0");

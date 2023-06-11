@@ -21,9 +21,9 @@ void iniciarJuego() {
     int enemigoY;
     do
     {
-        enemigoX = rand() % 118 + 1;
-        enemigoY = rand() % 28 + 1;
-    } while (mapa[enemigoY][enemigoX] == 1);
+        enemigoX = rand() % 111 + 1;
+        enemigoY = rand() % 25 + 1;
+    } while (mapa[enemigoY][enemigoX] == 1 || mapa[enemigoY+1][enemigoX] == 1 || mapa[enemigoY + 2][enemigoX] == 1 || mapa[enemigoY][enemigoX + 1] == 1 || mapa[enemigoY +1][enemigoX + 1] == 1 || mapa[enemigoY + 2][enemigoX + 1] == 1 || mapa[enemigoY][enemigoX + 2] == 1 || mapa[enemigoY + 1][enemigoX + 2] == 1 || mapa[enemigoY + 2][enemigoX + 2] == 1);
     
 
 
