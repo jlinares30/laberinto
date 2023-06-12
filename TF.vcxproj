@@ -131,6 +131,9 @@
     <ClInclude Include="color.h" />
     <ClInclude Include="enemigo.h" />
     <ClInclude Include="aliado.h" />
+    <ClInclude Include="mapa3.h" />
+    <ClInclude Include="mapa4.h" />
+    <ClInclude Include="mapa2.h" />
     <ClInclude Include="jugar.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="mapa.h" />
