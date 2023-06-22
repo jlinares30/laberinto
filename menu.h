@@ -10,11 +10,17 @@
 using namespace std;
 using namespace System;
 
+void textoLento(char* texto) {
+    while (*texto) {
+        cout << *texto++;
+        _sleep(15);
+    }
+}
 void mostrarMenu()
 {
-    system("cls"); // Limpiar la consola en Windows (para otros sistemas operativos, se necesita otro enfoque)
+    system("cls");
 
-    // Establecer el color del marco y las palabras
+
     asignarColor(8);
 
     cout << "\n\n\t\t\t\t\t\t"; cout << char(201) << char(205) << char(205) << char(205) << char(205)
@@ -44,45 +50,50 @@ void mostrarMenu()
         << char(205) << char(205) << char(205) << char(205) << char(205) << char(205) << char(205)
         << char(205) << char(205) << char(205) << char(205) << char(188) << endl;
 
-    // Restaurar el color predeterminado
-    asignarColor(14); // Blanco
+    asignarColor(14);
 }
 
 void jugar() {
-    cout << "Iniciando el juego..." << endl;
     iniciarJuego();
-    // Aquí puedes llamar a la función para empezar el juego
 }
 void mostrarHistoria() {
     cout << "Historia del juego..." << endl;
-    // Aquí puedes mostrar la historia del juego
+
 }
 
 void mostrarInstrucciones() {
-    cout << "\n\n";
+    char* texto = "En PowerPlanet, seras el heroe de la energia sostenible. Tu mision es ampliar \n\t\tla infraestructura energetica en paises poco desarrollados. Enfrentaras obstaculos,\n\t\tenemigos y contaras con poderes y aliados para lograrlo. A medida que avanzas, el\n\t\tjuego se vuelve más desafiante, haciendo que la experiencia sea aun mas emocionante.\n\t\tPreparate para convertirte en el salvador de la energia sostenible en PowerPlanet.";
+
+    cout << "\n\n\n";
     cout << "\t    -------------------------------------------------------------------------------" << endl;
     cout << "\t      -----------------------------------------------------------------------------------" << endl;
-    cout << "\t\tEn PowerPlanet, seras el heroe de la energia sostenible. Tu mision es ampliar la" << endl;
-    cout << "\t\tinfraestructura energetica en paises poco desarrollados. Enfrentaras obstaculos," << endl;
-    cout << "\t\tenemigos y contaras con poderes y aliados para lograrlo. A medida que avanzas, el " << endl;
-    cout << "\t\tjuego se vuelve más desafiante, haciendo que la experiencia sea aun mas emocionante." << endl;
-    cout << "\t\tPreparate para convertirte en el salvador de la energia sostenible en PowerPlanet." << endl;
-    cout << "\t\t  -----------------------------------------------------------------------------------" << endl;
+    cout << "\t\t"; textoLento(texto);
+    cout << "\n\t\t  -----------------------------------------------------------------------------------" << endl;
     cout << "\t\t\t-------------------------------------------------------------------------------" << endl;
 
-    cout << "\n\n\t\t\t\t\t\t\t\t\t\tPulsa una tecla para continuar...";
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPulsa una tecla para continuar...";
 
 
-    // Aquí puedes mostrar las instrucciones del juego
+
 }
 void mostrarCreditos() {
+    char* texto = "\n\n\n\n\t1. Leandro Arevalo \n\n\t2. Nayara Maldonado\n\n\t3. Jorge Linares";
+    asignarColor(4);
+    cout << "\n\n\t\t\t\t           #";
+    cout << "\n\t\t\t\t          ##.";
+    cout << "\n\t\t\t\t     #    ####.        #";
+    cout << "\n\t\t\t\t   .#     .######       #.";
+    cout << "\n\t\t\t\t   ##      #######      ##";
+    cout << "\n\t\t\t\t   ###       #####.    ###";
+    cout << "\n\t\t\t\t   ####        ###    ####";
+    cout << "\n\t\t\t\t    ######     #   ######";
+    cout << "\n\t\t\t\t      #################";
+    cout << "\n\t\t\t\t         ###########\n";
+    asignarColor(14);
+    textoLento(texto);
+    cout << "\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPulsa una tecla para continuar...";
 
-    cout << "C R " << char(144) << "D I T O S" << endl;
-
-    cout << "1. Leandro Arevalo Nu" << char(164) << "ez" << endl;
-    cout << "2. Nayara Maldonado" << endl;
-    cout << "3. Jorge Linares" << endl;
-    // Aquí puedes mostrar los créditos del juego
 }
 
 

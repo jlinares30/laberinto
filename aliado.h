@@ -7,8 +7,8 @@ using namespace System;
 using namespace std;
 
 struct Aliado {
-    int aliadoX;
-    int aliadoY;
+    int aliadoX = 25;
+    int aliadoY = 2;
     string cabeza = "/O\\";
     string cuerpo = "/|\\";
     string pies =   "/ \\";

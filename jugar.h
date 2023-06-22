@@ -13,18 +13,20 @@
 Personaje* personaje = new Personaje();
     Enemigo* enemigo = new Enemigo();
     Aliado* aliado = new Aliado();
-    int posX = 0;
-    int posY = 1;
-    int posAliadoX = 25;
-    int posAliadoY = 2;
+    int posX = 0; //110
+    int posY = 1; // 22
     // Generar posición inicial del enemigo
     int enemigoX;
     int enemigoY;
+    int contadorTotalVitaminas = 0;
+    int numVitaminasMapa1 = 2;
 
 void iniciarJuego() {
     bool cambioMapa2 = false;
     bool cambioMapa3 = false;
     bool cambioMapa4 = false;
+    bool mapaVitaminas[30][120] = {}; // inicializa un mapa de vitaminas con todos los valores de la matriz en falso
+    
     do
     {
         enemigoX = rand() % 111 + 1;
@@ -39,29 +41,29 @@ void iniciarJuego() {
 
     generarMapa(mapa);
     dibujarPersonaje(personaje, posX, posY);
-    dibujarAliado(aliado, posAliadoX, posAliadoY);
+    dibujarAliado(aliado, aliado->aliadoX, aliado->aliadoY);
     
 
     while (1) {
         if (kbhit()) {
             char tecla = getch();
 
-            if (tecla == DERECHA && (mapa[posY][posX + 3] == 0 && mapa[posY + 1][posX + 3] == 0 && mapa[posY + 2][posX + 3] == 0)) {
+            if (tecla == DERECHA && (mapa[posY][posX + 3] != 1 && mapa[posY + 1][posX + 3] != 1 && mapa[posY + 2][posX + 3] != 1)) {
                 borrarPersonaje(personaje, posX, posY);
                 posX++;
             }
 
-            if (tecla == IZQUIERDA && (mapa[posY][posX - 1] == 0 && mapa[posY + 1][posX - 1] == 0 && mapa[posY + 2][posX - 1] == 0))
+            if (tecla == IZQUIERDA && (mapa[posY][posX - 1] != 1 && mapa[posY + 1][posX - 1] != 1 && mapa[posY + 2][posX - 1] != 1))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posX--;
             }
-            if (tecla == ARRIBA && (mapa[posY - 1][posX] == 0 && mapa[posY - 1][posX + 1] == 0 && mapa[posY - 1][posX + 2] == 0))
+            if (tecla == ARRIBA && (mapa[posY - 1][posX] != 1 && mapa[posY - 1][posX + 1] != 1 && mapa[posY - 1][posX + 2] != 1))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posY--;
             }
-            if (tecla == ABAJO && (mapa[posY + 3][posX] == 0 && mapa[posY + 3][posX + 1] == 0 && mapa[posY + 3][posX + 2] == 0))
+            if (tecla == ABAJO && (mapa[posY + 3][posX] != 1 && mapa[posY + 3][posX + 1] != 1 && mapa[posY + 3][posX + 2] != 1))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posY++;
@@ -123,11 +125,32 @@ void iniciarJuego() {
 
         dibujarEnemigo(enemigo, enemigoX, enemigoY);
 
-        if (posY == 23 && posX == 112)
+
+        // Cambio de mapa si consigue todas las vitaminas y llega al final del laberinto
+        if ((posY == 23 && posX == 112) && (contadorTotalVitaminas == numVitaminasMapa1))
         {
             cambioMapa2 = true;
+            contadorTotalVitaminas = 0;
+            memset(mapaVitaminas, false, sizeof(mapaVitaminas)); // vuelve a inicializar la matriz de vitaminas en falso
         }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    int mapaX = posX + j;
+                    int mapaY = posY + i;
 
+                    if (mapa[mapaY][mapaX] == 5 && !mapaVitaminas[mapaY][mapaX])
+                    {
+                        personaje->contVidas++;
+                        contadorTotalVitaminas++;
+                        mapaVitaminas[mapaY][mapaX] = true; // si cualquier parte del personaje pasa por la coordenada de la vitamina, la misma coordenada en el mapa de la vitamina se pone en true y solo lo contabiliza una vez
+                    }
+                }
+            }
+        }
         Sleep(100);
     }
 

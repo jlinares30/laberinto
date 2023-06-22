@@ -14,6 +14,7 @@ const int IZQUIERDA = 75;
 struct Personaje {
     int x;
     int y;
+    int contVidas = 0;
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
