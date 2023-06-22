@@ -2,14 +2,14 @@
 D:\Jorge\intro Algoritmos\laberinto\laberinto\TF.cpp(1,1): warning C4005: '__CLR_VER': redefinición de macro
 D:\Jorge\intro Algoritmos\laberinto\laberinto\TF.cpp(1,1): message : '__CLR_VER' declarado previamente en la línea de comandos
 D:\Jorge\intro Algoritmos\laberinto\laberinto\TF.cpp(1,1): warning C4651: Se especificó '/D__CLR_VER=40809139' para el encabezado precompilado pero no para la compilación actual
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(50,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(51,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(163,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(164,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(219,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(220,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(274,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(275,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(52,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(53,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(169,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(170,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(225,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(226,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(280,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+D:\Jorge\intro Algoritmos\laberinto\laberinto\jugar.h(281,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
 D:\Jorge\intro Algoritmos\laberinto\laberinto\menu.h(16,9): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
 D:\Jorge\intro Algoritmos\laberinto\laberinto\TF.cpp(14,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo

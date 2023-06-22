@@ -22,13 +22,14 @@ Personaje* personaje = new Personaje();
     int enemigoY;
     int contadorTotalVitaminas = 0;
     int numVitaminasMapa1 = 2;
+    int numVitaminasMapa2 = 3;
+    int numVitaminasMapa3 = 4;
 
 void iniciarJuego() {
     bool cambioMapa2 = false;
     bool cambioMapa3 = false;
     bool cambioMapa4 = false;
     bool mapaVitaminas[30][120] = {}; // inicializa un mapa con todos los valores de la matriz en falso
-    
     do
     {
         enemigoX = rand() % 111 + 1;
@@ -42,6 +43,7 @@ void iniciarJuego() {
 
 
     generarMapa(mapa);
+    imprimirVidas(personaje);
     dibujarPersonaje(personaje, posX, posY);
     dibujarAliado(aliado, posAliadoX, posAliadoY);
     
@@ -146,7 +148,11 @@ void iniciarJuego() {
 
                     if (mapa[mapaY][mapaX] == 5 && !mapaVitaminas[mapaY][mapaX])
                     {
-                        personaje->contVidas++;
+                        if (personaje->contVidas<3)
+                        {
+                            personaje->contVidas++;
+                        }
+                        imprimirVidas(personaje);
                         contadorTotalVitaminas++;
                         mapaVitaminas[mapaY][mapaX] = true; // si cualquier parte del personaje pasa por la coordenada de la vitamina, la misma coordenada en el mapa de la vitamina se pone en true y solo lo contabiliza una vez
                     }

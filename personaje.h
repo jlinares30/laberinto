@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <iostream>
 #include "color.h"
+#include "enemigo.h"
 #include "bala.h" // Agregar esta línea
 
 using namespace System;
@@ -14,7 +15,9 @@ const int IZQUIERDA = 75;
 struct Personaje {
     int x;
     int y;
-    int contVidas = 0;
+    int contVidas = 2;
+    int posVidasX = 1;
+    int posVidasY = 27;
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
@@ -55,4 +58,28 @@ void disparar(Personaje* personaje) {
         personaje->balas[personaje->numBalas] = nuevaBala;
         personaje->numBalas++;
     }
+}
+
+void imprimirVidas(Personaje* personaje) {
+    asignarColor(9);
+    asignarPosicion(personaje->posVidasX, personaje->posVidasY);
+    cout << "HP: " << personaje->contVidas << " ";
+    switch (personaje->contVidas)
+    {
+    case 1:
+        cout << "*";
+        break;
+    case 2:
+        cout << "* *";
+        break;
+    case 3:
+        cout << "* * *";
+        break;
+    default:
+        break;
+    }
+}
+
+void colisionEnemigoPersonaje(Personaje* personaje, Enemigo* enemigo) {
+
 }
