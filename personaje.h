@@ -2,6 +2,7 @@
 #include <iostream>
 #include "color.h"
 #include "enemigo.h"
+#include "agente.h"
 #include "bala.h" // Agregar esta línea
 
 using namespace System;
@@ -15,7 +16,7 @@ const int IZQUIERDA = 75;
 struct Personaje {
     int x;
     int y;
-    int contVidas = 2;
+    int contVidas = 3;
     int posVidasX = 1;
     int posVidasY = 27;
     string cabeza = "/O\\";
@@ -67,10 +68,10 @@ void imprimirVidas(Personaje* personaje) {
     switch (personaje->contVidas)
     {
     case 1:
-        cout << "*";
+        cout << "*    ";
         break;
     case 2:
-        cout << "* *";
+        cout << "* *  ";
         break;
     case 3:
         cout << "* * *";
@@ -82,4 +83,19 @@ void imprimirVidas(Personaje* personaje) {
 
 void colisionEnemigoPersonaje(Personaje* personaje, Enemigo* enemigo) {
 
+}
+void imprimir_mensaje_perdedor()
+{
+    Console::Clear();
+    Console::SetWindowSize(120, 30);
+    ubicar(40, 12);
+    cout << " GGGG   AAAAA  M   M  EEEEE       OOO   V   V  EEEEE  RRRR ";
+    ubicar(40, 13);
+    cout << "G      A     A MM MM  E          O   O  V   V  E      R   R";
+    ubicar(40, 14);
+    cout << "G  GGG AAAAAAA M M M  EEEE       O   O  V   V  EEEE   RRRR ";
+    ubicar(40, 15);
+    cout << "G    G A     A M   M  E          O   O  V   V  E      R  R ";
+    ubicar(40, 16);
+    cout << " GGGG  A     A M   M  EEEEE       OOO    VVV   EEEEE  R   R";
 }
