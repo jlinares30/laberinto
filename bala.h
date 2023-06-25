@@ -4,6 +4,7 @@
 #include "mapa.h"
 #include "color.h"
 #include "enemigo.h"
+#include "agente.h"
 
 using namespace System;
 using namespace std;
@@ -35,7 +36,7 @@ void borrarBala(Bala* bala, int posX, int posY) {
     cout << " ";
 }
 
-void moverBala(Bala& bala, int mapa[FILAS][COLUMNAS], int& numBalas, int index, Bala* balas) {
+void moverBala(Bala& bala, int mapa[FILAS][COLUMNAS], int& numBalas, int index, Bala* balas, Agente agentes[], int numAgentes) {
     borrarBala(&bala, bala.x, bala.y);
 
     if (mapa[bala.y][bala.x + 1] == 1) {
@@ -62,6 +63,24 @@ void moverBala(Bala& bala, int mapa[FILAS][COLUMNAS], int& numBalas, int index, 
             asignarColor(10);
             dibujarBala(&bala, bala.x, bala.y);
         }
+        
     }
+    for (int i = 0; i < numAgentes; i++) {
+        if (bala.x == agentes[i].x && bala.y >= agentes[i].y && bala.y <= agentes[i].y + 1) {
+            // Detener el movimiento del agente
+            agentes[i].dx = 0;
+            agentes[i].dy = 0;
+            agentes[i].tiempoInactividad = 30;
+            // Eliminar la bala
+            borrarBala(&bala, bala.x, bala.y);
+            for (int j = index; j < numBalas - 1; j++) {
+                balas[j] = balas[j + 1];
+            }
+
+            numBalas--;
+        }
+    }
+
+    
 }
 

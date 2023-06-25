@@ -2,6 +2,7 @@
 #include <iostream>
 #include "color.h"
 #include "enemigo.h"
+#include "agente.h"
 #include "bala.h" // Agregar esta línea
 
 using namespace System;
@@ -17,13 +18,12 @@ struct Personaje {
     int y;
     int posX;
     int posY;
-    int contVidas = 1;
+    int contVidas = 3;
     int posVidasX = 1;
     int posVidasY = 27;
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
-
     Bala* balas; // Agregar el atributo Bala* balas al struct
     int numBalas; // Agregar el atributo numBalas para llevar cuenta de las balas
 };
@@ -109,10 +109,7 @@ void colisionEnemigoPersonaje(Personaje* personaje,int posX, int posY, Enemigo* 
         posY = 1;
     }
 
-void ubicar(float x, float y)
-{
-    Console::SetCursorPosition(x, y);
-}
+
 void imprimir_mensaje_perdedor()
 {
     Console::Clear();
@@ -127,4 +124,17 @@ void imprimir_mensaje_perdedor()
     cout << "G    G A     A M   M  E          O   O  V   V  E      R  R ";
     ubicar(40, 16);
     cout << " GGGG  A     A M   M  EEEEE       OOO    VVV   EEEEE  R   R";
+}
+void imprimir_mensaje_ganador()
+{
+    Console::Clear();
+    Console::SetWindowSize(120, 30);
+    ubicar(40, 12);
+    cout << "_  _   ___   __ __    __    __ __ __  __";
+    ubicar(40, 13);
+    cout << "\\\\//  // \\\\  || ||    ||    || || ||\\ ||";
+    ubicar(40, 14);
+    cout << " )/  ((   )) || ||    \\\\ /\\ // || ||\\\\||";
+    ubicar(40, 15);
+    cout << "//    \\\\_//  \\\\_//     \\V/\\V/  || || \\||";
 }

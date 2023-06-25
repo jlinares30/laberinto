@@ -9,13 +9,6 @@ using namespace std;
 struct Enemigo {
     int enemigoX = 20;
     int enemigoY = 15;
-    int enemigo2X = 50;
-    int enemigo2Y = 23;
-    int direccion = 1;
-    int enemigo1Mapa1X ;
-    int enemigo1Mapa1Y = 15;
-    int enemigo2Mapa1X = 50;
-    int enemigo2Mapa1Y = 23;
     float dx = 1;
     float dy = 1;
     string cabeza = "___";
@@ -35,17 +28,7 @@ void dibujarEnemigo(Enemigo* enemigo, int posX, int posY) {
     asignarPosicion(enemigo->enemigoX, enemigo->enemigoY + 2);
     cout << enemigo->pies;
 }
-void dibujarEnemigo2(Enemigo* enemigo, int posX, int posY) {
-    enemigo->enemigo2X = posX;
-    enemigo->enemigo2Y = posY;
-    asignarColor(11);
-    asignarPosicion(enemigo->enemigo2X, enemigo->enemigo2Y);
-    cout << enemigo->cabeza;
-    asignarPosicion(enemigo->enemigo2X, enemigo->enemigo2Y + 1);
-    cout << enemigo->cuerpo;
-    asignarPosicion(enemigo->enemigo2X, enemigo->enemigo2Y + 2);
-    cout << enemigo->pies;
-}
+
 void eliminarEnemigo(Enemigo* enemigo, int posX, int posY) {
     enemigo->enemigoX = posX;
     enemigo->enemigoY = posY;
@@ -57,17 +40,7 @@ void eliminarEnemigo(Enemigo* enemigo, int posX, int posY) {
     asignarPosicion(enemigo->enemigoX, enemigo->enemigoY + 2);
     cout << string(3, ' ');
 }
-void eliminarEnemigo2(Enemigo* enemigo, int posX, int posY) {
-    enemigo->enemigo2X = posX;
-    enemigo->enemigo2Y = posY;
-    asignarColor(8);
-    asignarPosicion(enemigo->enemigo2X, enemigo->enemigo2Y);
-    cout << string(3, ' ');
-    asignarPosicion(enemigo->enemigo2X, enemigo->enemigo2Y + 1);
-    cout << string(3, ' ');
-    asignarPosicion(enemigo->enemigo2X, enemigo->enemigo2Y + 2);
-    cout << string(3, ' ');
-}
+
 //
 //void movimientoEnemigoX(Enemigo* enemigo, int enemigoX, int enemigoY) {
 //        
