@@ -16,13 +16,12 @@ const int IZQUIERDA = 75;
 struct Personaje {
     int x;
     int y;
-    int contVidas = 3;
+    int contVidas = 2;
     int posVidasX = 1;
     int posVidasY = 27;
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
-
     Bala* balas; // Agregar el atributo Bala* balas al struct
     int numBalas; // Agregar el atributo numBalas para llevar cuenta de las balas
 };

@@ -13,10 +13,11 @@
 
 Personaje* personaje = new Personaje();
     Enemigo* enemigo = new Enemigo();
-    Agente* agentes = new Agente[3];
+    Agente* agentes = new Agente[9];
+    Bala* balas = new Bala[10];
     Aliado* aliado = new Aliado();
-    int posX = 0; //110
-    int posY = 1; // 22
+    int posX = 40; //110
+    int posY = 21; // 22
     int posAliadoX = 28;
     int posAliadoY = 5;
     // Generar posición inicial del enemigo
@@ -33,6 +34,7 @@ void iniciarJuego() {
     bool cambioMapa3 = false;
     bool cambioMapa4 = false;
     bool juegoTerminado = false;
+    int numAgentes = 9;
     bool mapaVitaminas[30][120] = {}; // inicializa un mapa con todos los valores de la matriz en falso
 
 
@@ -50,6 +52,20 @@ void iniciarJuego() {
     agentes[1].y = 21;
     agentes[2].x = 58;
     agentes[2].y = 9;
+    agentes[3].x = 2;
+    agentes[3].y = 12;
+    agentes[4].x = 47;
+    agentes[4].y = 12;
+    agentes[5].x = 76;
+    agentes[5].y = 7;
+    agentes[6].x = 9;
+    agentes[6].y = 9;
+    agentes[7].x = 9;
+    agentes[7].y = 9;
+    agentes[8].x = 9;
+    agentes[8].y = 9;
+    agentes[9].x = 9;
+    agentes[9].y = 9;
 
     while (1) {
         if (kbhit()) {
@@ -83,8 +99,14 @@ void iniciarJuego() {
         }
 
         for (int i = 0; i < personaje->numBalas; i++) {
-            moverBala(personaje->balas[i], mapa, personaje->numBalas, i, personaje->balas);
+            moverBala(personaje->balas[i], mapa, personaje->numBalas, i, personaje->balas, agentes, 9);
         }
+
+
+        /*for (int i = 0; i < personaje->numBalas; i++) {
+            moverBala(personaje->balas[i], mapa, agentes, numAgentes);
+        }*/
+
 
         dibujarPersonaje(personaje, posX, posY);
         
@@ -93,17 +115,18 @@ void iniciarJuego() {
             generarMapa(mapa2);
             posX = 0;
             posY = 1;
+            imprimirVidas(personaje);
             break;
         }
 
         // movimiento del enemigo
         borrar_agente(&agentes[0]);
-        mover_agenteX(&agentes[0]);
+        mover_agenteX(&agentes[0], mapa);
         dibujar_agente(&agentes[0]);
         for (int i = 1; i < 3; i++)
         {
             borrar_agente(&agentes[i]);
-            mover_agenteY(&agentes[i]);
+            mover_agenteY(&agentes[i], mapa);
             dibujar_agente(&agentes[i]);
         }
             
@@ -137,29 +160,28 @@ void iniciarJuego() {
                 break;
             }
 
-            //colision bala-agente
-            
+
 
         // colision aliado-personaje
             if (posX == posAliadoX && posY == posAliadoY)
             {
                 // Realizar acciones cuando hay colisión con el aliado
                 eliminarAliado(aliado, posAliadoX, posAliadoY);
-                asignarColor(13);
                 // Cambiar el valor de la pared al lado del aliado de 1 a 0 en el mapa
-                mapa[posAliadoY][posAliadoX + 3] = 0;
-                mapa[posAliadoY][posAliadoX + 4] = 0;
-                mapa[posAliadoY+1][posAliadoX + 3] = 0;
-                mapa[posAliadoY+1][posAliadoX + 4] = 0;
-                mapa[posAliadoY+2][posAliadoX + 3] = 0;
-                mapa[posAliadoY+2][posAliadoX + 4] = 0;
+                mapa[posAliadoY][posAliadoX + 3] = 0; //Cambia la coordenada de la pared a 0 en la linea de la cabeza del aliado
+                mapa[posAliadoY][posAliadoX + 4] = 0; //Cambia la segunda coordenada de la pared a 0 en la linea de la cabeza del aliado
+                mapa[posAliadoY+1][posAliadoX + 3] = 0; //Cambia la coordenada de la pared a 0 en la linea del cuerpo del aliado
+                mapa[posAliadoY+1][posAliadoX + 4] = 0;//Cambia la segunda coordenada de la pared a 0 en la linea del cuerpo del aliado
+                mapa[posAliadoY+2][posAliadoX + 3] = 0;//Cambia la coordenada de la pared a 0 en la linea de los pies del aliado
+                mapa[posAliadoY+2][posAliadoX + 4] = 0;//Cambia la segunda coordenada de la pared a 0 en la linea de los pies del aliado
 
                 
             }
 
 
         // Cambio de mapa si consigue todas las vitaminas y llega al final del laberinto
-        if ((posY == 23 && posX == 112) && (contadorTotalVitaminas == numVitaminasMapa1))
+        if ((posY == 23 && posX == 112) )
+            //&& (contadorTotalVitaminas == numVitaminasMapa1)
         {
             cambioMapa2 = true;
             contadorTotalVitaminas = 0;
@@ -201,22 +223,22 @@ void iniciarJuego() {
         if (kbhit()) {
             char tecla = getch();
 
-            if (tecla == DERECHA && (mapa2[posY][posX + 3] == 0 && mapa2[posY + 1][posX + 3] == 0 && mapa2[posY + 2][posX + 3] == 0)) {
+            if (tecla == DERECHA && (mapa2[posY][posX + 3] != 1 && mapa2[posY + 1][posX + 3] != 1 && mapa2[posY + 2][posX + 3] != 1)) {
                 borrarPersonaje(personaje, posX, posY);
                 posX++;
             }
 
-            if (tecla == IZQUIERDA && (mapa2[posY][posX - 1] == 0 && mapa2[posY + 1][posX - 1] == 0 && mapa2[posY + 2][posX - 1] == 0))
+            if (tecla == IZQUIERDA && (mapa2[posY][posX - 1] != 1 && mapa2[posY + 1][posX - 1] != 1 && mapa2[posY + 2][posX - 1] != 1))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posX--;
             }
-            if (tecla == ARRIBA && (mapa2[posY - 1][posX] == 0 && mapa2[posY - 1][posX + 1] == 0 && mapa2[posY - 1][posX + 2] == 0))
+            if (tecla == ARRIBA && (mapa2[posY - 1][posX] != 1 && mapa2[posY - 1][posX + 1] != 1 && mapa2[posY - 1][posX + 2] != 1))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posY--;
             }
-            if (tecla == ABAJO && (mapa2[posY + 3][posX] == 0 && mapa2[posY + 3][posX + 1] == 0 && mapa2[posY + 3][posX + 2] == 0))
+            if (tecla == ABAJO && (mapa2[posY + 3][posX] != 1 && mapa2[posY + 3][posX + 1] != 1 && mapa2[posY + 3][posX + 2] != 1))
             {
                 borrarPersonaje(personaje, posX, posY);
                 posY++;
@@ -228,9 +250,9 @@ void iniciarJuego() {
             }
         }
 
-        for (int i = 0; i < personaje->numBalas; i++) {
+        /*for (int i = 0; i < personaje->numBalas; i++) {
             moverBala(personaje->balas[i], mapa2, personaje->numBalas, i, personaje->balas);
-        }
+        }*/
 
         dibujarPersonaje(personaje, posX, posY);
 
@@ -239,18 +261,87 @@ void iniciarJuego() {
             generarMapa3(mapa3);
             posX = 0;
             posY = 1;
+            imprimirVidas(personaje);
             break;
         }
 
+        // movimiento del enemigo
+        borrar_agente(&agentes[3]);
+        mover_agenteX(&agentes[3], mapa2);
+        dibujar_agente(&agentes[3]);
+        for (int i = 4; i < 6; i++)
+        {
+            borrar_agente(&agentes[i]);
+            mover_agenteY(&agentes[i], mapa2);
+            dibujar_agente(&agentes[i]);
+        }
 
-        if (posY == 23 && posX == 112)
+        //Colision agente-personaje
+        bool colision = false;
+
+        // Verificar colisión en cada posición del personaje y enemigo
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if ((posY + i >= agentes[3].y && posY + i <= agentes[3].y + 1 && posX + j == agentes[3].x) ||
+                    (posY + i >= agentes[4].y && posY + i <= agentes[4].y + 1 && posX + j == agentes[4].x) ||
+                    (posY + i >= agentes[5].y && posY + i <= agentes[5].y + 1 && posX + j == agentes[5].x))
+                {
+                    colision = true;
+                    personaje->contVidas--;
+                    imprimirVidas(personaje);
+                    borrarPersonaje(personaje, posX, posY);
+                    posX = 0;
+                    posY = 1;
+                    break;
+                }
+            }
+            if (colision) {
+                break;
+            }
+        }
+        if (personaje->contVidas < 1)
+        {
+            juegoTerminado = true;
+            break;
+        }
+
+        // Cambio de mapa si consigue todas las vitaminas y llega al final del laberinto
+        if ((posY == 23 && posX == 112))
+            //&& (contadorTotalVitaminas == numVitaminasMapa2)
         {
             cambioMapa3 = true;
+            contadorTotalVitaminas = 0;
+            memset(mapaVitaminas, false, sizeof(mapaVitaminas)); // vuelve a inicializar la matriz de vitaminas en falso
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    int mapaX = posX + j;
+                    int mapaY = posY + i;
+
+                    if (mapa2[mapaY][mapaX] == 5 && !mapaVitaminas[mapaY][mapaX])
+                    {
+                        if (personaje->contVidas < 3)
+                        {
+                            personaje->contVidas++;
+                        }
+                        imprimirVidas(personaje);
+                        contadorTotalVitaminas++;
+                        mapaVitaminas[mapaY][mapaX] = true; // si cualquier parte del personaje pasa por la coordenada de la vitamina, la misma coordenada en el mapa de la vitamina se pone en true y solo lo contabiliza una vez
+                    }
+                }
+            }
         }
 
         Sleep(100);
     }
-
+    if (juegoTerminado) {
+        imprimir_mensaje_perdedor();
+        getch();
+    }
     // --------------------------------------------- BUCLE DEL TERCER MAPA-----------------------------------------
     while (3)
     {
@@ -284,9 +375,9 @@ void iniciarJuego() {
             }
         }
 
-        for (int i = 0; i < personaje->numBalas; i++) {
+        /*for (int i = 0; i < personaje->numBalas; i++) {
             moverBala(personaje->balas[i], mapa3, personaje->numBalas, i, personaje->balas);
-        }
+        }*/
 
         dibujarPersonaje(personaje, posX, posY);
 
@@ -339,9 +430,9 @@ void iniciarJuego() {
             }
         }
 
-        for (int i = 0; i < personaje->numBalas; i++) {
+        /*for (int i = 0; i < personaje->numBalas; i++) {
             moverBala(personaje->balas[i], mapa4, personaje->numBalas, i, personaje->balas);
-        }
+        }*/
 
         dibujarPersonaje(personaje, posX, posY);
 

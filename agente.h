@@ -4,6 +4,9 @@
 #include <Windows.h>
 #include "utilidades.h"
 #include "mapa.h"
+#include "mapa2.h"
+#include "mapa3.h"
+#include "mapa4.h"
 
 using namespace std;
 using namespace System;
@@ -47,11 +50,11 @@ bool validar_mov_agente_vertical(int mapa[FILAS][COLUMNAS], Agente* agente)
         return true;
     }
 
-    return false; // No hay colisión
+    return false;
 }
 
 
-void mover_agenteX(Agente* agente)
+void mover_agenteX(Agente* agente, int mapa[FILAS][COLUMNAS])
 {
 
     if (validar_mov_agente_horizontal(mapa, agente)) {
@@ -61,10 +64,16 @@ void mover_agenteX(Agente* agente)
 
 }
 
-void mover_agenteY(Agente* agente) {
+void mover_agenteY(Agente* agente, int mapa[FILAS][COLUMNAS]) {
     if (validar_mov_agente_vertical(mapa, agente)) {
         agente->dy *= -1;
     }
     agente->y += agente->dy;
 
+}
+
+void eliminar_agente(Agente* agente)
+{
+    borrar_agente(agente);
+    delete agente;
 }

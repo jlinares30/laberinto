@@ -62,7 +62,7 @@ void mostrarHistoria() {
 }
 
 void mostrarInstrucciones() {
-    char* texto = "En PowerPlanet, seras el heroe de la energia sostenible. Tu mision es ampliar \n\t\tla infraestructura energetica en paises poco desarrollados. Enfrentaras obstaculos,\n\t\tenemigos y contaras con poderes y aliados para lograrlo. A medida que avanzas, el\n\t\tjuego se vuelve más desafiante, haciendo que la experiencia sea aun mas emocionante.\n\t\tPreparate para convertirte en el salvador de la energia sostenible en PowerPlanet.";
+    char* texto = "En PowerSaver, seras el heroe de la energia sostenible. Tu mision es ampliar \n\t\tla infraestructura energetica en paises poco desarrollados. Enfrentaras obstaculos,\n\t\tenemigos y contaras con poderes y aliados para lograrlo. A medida que avanzas, el\n\t\tjuego se vuelve más desafiante, haciendo que la experiencia sea aun mas emocionante.\n\t\tPreparate para convertirte en el salvador de la energia sostenible en PowerPlanet.";
 
     cout << "\n\n\n";
     cout << "\t    -------------------------------------------------------------------------------" << endl;
