@@ -1,13 +1,2 @@
-﻿  TF.cpp
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(48,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(49,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(161,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(162,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(217,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(218,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(272,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(273,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\menu.h(16,9): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\TF.cpp(14,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+﻿  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   TF.vcxproj -> C:\disco D\software\introduccion a los logaritmos\TF\laberinto\x64\Debug\TF.exe

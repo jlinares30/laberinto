@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <iostream>
 #include "color.h"
+#include "enemigo.h"
 #include "bala.h" // Agregar esta línea
 
 using namespace System;
@@ -14,7 +15,11 @@ const int IZQUIERDA = 75;
 struct Personaje {
     int x;
     int y;
-    int contVidas = 0;
+    int posX;
+    int posY;
+    int contVidas = 1;
+    int posVidasX = 1;
+    int posVidasY = 27;
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
@@ -55,4 +60,71 @@ void disparar(Personaje* personaje) {
         personaje->balas[personaje->numBalas] = nuevaBala;
         personaje->numBalas++;
     }
+}
+
+void imprimirVidas(Personaje* personaje) {
+    asignarColor(9);
+    asignarPosicion(personaje->posVidasX, personaje->posVidasY);
+    cout << "HP: " << personaje->contVidas << " ";
+    switch (personaje->contVidas)
+    {
+    case 1:
+        cout << "*    ";
+        break;
+    case 2:
+        cout << "* *  ";
+        break;
+    case 3:
+        cout << "* * *";
+        break;
+    default:
+        break;
+    }
+}
+
+void colisionEnemigoPersonaje(Personaje* personaje,int posX, int posY, Enemigo* enemigo) {
+    int enemigoX = static_cast<int>(enemigo->enemigoX);
+    int enemigoY = static_cast<int>(enemigo->enemigoY);
+
+    bool colision = false;
+
+    // Verificar colisión en cada posición del personaje y enemigo
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if ((posY + i == enemigoY && posX + j == enemigoX) ||
+                (posY + i == enemigoY + 1 && posX + j == enemigoX) ||
+                (posY + i == enemigoY + 2 && posX + j == enemigoX))
+            {
+                colision = true;
+                break;
+            }
+        }
+        if (colision) {
+            break;
+        }
+    }
+        personaje->contVidas--;
+        borrarPersonaje(personaje, posX, posY);
+        posX = 0;
+        posY = 1;
+    }
+
+void ubicar(float x, float y)
+{
+    Console::SetCursorPosition(x, y);
+}
+void imprimir_mensaje_perdedor()
+{
+    Console::Clear();
+    Console::SetWindowSize(120, 30);
+    ubicar(40, 12);
+    cout << " GGGG   AAAAA  M   M  EEEEE       OOO   V   V  EEEEE  RRRR ";
+    ubicar(40, 13);
+    cout << "G      A     A MM MM  E          O   O  V   V  E      R   R";
+    ubicar(40, 14);
+    cout << "G  GGG AAAAAAA M M M  EEEE       O   O  V   V  EEEE   RRRR ";
+    ubicar(40, 15);
+    cout << "G    G A     A M   M  E          O   O  V   V  E      R  R ";
+    ubicar(40, 16);
+    cout << " GGGG  A     A M   M  EEEEE       OOO    VVV   EEEEE  R   R";
 }

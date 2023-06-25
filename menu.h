@@ -73,9 +73,6 @@ void mostrarInstrucciones() {
 
 
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPulsa una tecla para continuar...";
-
-
-
 }
 void mostrarCreditos() {
     char* texto = "\n\n\n\n\t1. Leandro Arevalo \n\n\t2. Nayara Maldonado\n\n\t3. Jorge Linares";
