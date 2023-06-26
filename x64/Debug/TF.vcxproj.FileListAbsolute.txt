@@ -7,3 +7,15 @@ C:\disco D\software\introduccion a los logaritmos\TF\laberinto\x64\Debug\TF.exe
 D:\Jorge\intro Algoritmos\laberinto\laberinto\x64\Debug\TF.vcxproj.AssemblyReference.cache
 D:\Jorge\intro Algoritmos\laberinto\laberinto\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
 D:\Jorge\intro Algoritmos\laberinto\laberinto\x64\Debug\TF.exe
+C:\Users\Leandro\source\repos\TF JORGEEEE\x64\Debug\TF.vcxproj.AssemblyReference.cache
+C:\Users\Leandro\source\repos\TF JORGEEEE\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Leandro\source\repos\TF JORGEEEE\x64\Debug\TF.exe
+C:\Users\Leandro\source\repos\final final v2\x64\Debug\TF.vcxproj.AssemblyReference.cache
+C:\Users\Leandro\source\repos\final final v2\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Leandro\source\repos\final final v2\x64\Debug\TF.exe
+C:\trabajo final intro\final final v2\x64\Debug\TF.vcxproj.AssemblyReference.cache
+C:\trabajo final intro\final final v2\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
+C:\trabajo final intro\final final v2\x64\Debug\TF.exe
+C:\trabajo final intro\TF-202318624\x64\Debug\TF.vcxproj.AssemblyReference.cache
+C:\trabajo final intro\TF-202318624\x64\Debug\TF.vcxproj.SuggestedBindingRedirects.cache
+C:\trabajo final intro\TF-202318624\x64\Debug\TF.exe

@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "color.h"
-#include "bala.h" // Agregar esta línea
+#include "bala.h" 
 
 using namespace System;
 using namespace std;

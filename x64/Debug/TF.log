@@ -1,23 +1,35 @@
-﻿  TF.cpp
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  TF.cpp
 C:\disco D\software\introduccion a los logaritmos\TF\laberinto\utilidades.h(6,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
 C:\disco D\software\introduccion a los logaritmos\TF\laberinto\utilidades.h(6,32): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(74,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(75,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(226,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(232,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(233,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(378,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(383,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(384,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(537,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(541,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(32,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(33,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(77,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(78,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(126,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(127,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(61,5): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(94,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(95,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(159,13): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(261,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(267,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(268,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(328,13): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(425,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(430,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(431,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\jugar.h(590,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(30,12): warning C4129: 'B': secuencia de escape de carácter no reconocida
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(82,13): warning C4129: 'D': secuencia de escape de carácter no reconocida
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(137,13): warning C4129: 'D': secuencia de escape de carácter no reconocida
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(31,5): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(39,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(40,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(83,5): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(90,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(91,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(138,5): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(145,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\disco D\software\introduccion a los logaritmos\TF\laberinto\tutorial.h(146,26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
 C:\disco D\software\introduccion a los logaritmos\TF\laberinto\menu.h(17,9): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
 C:\disco D\software\introduccion a los logaritmos\TF\laberinto\TF.cpp(14,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   TF.vcxproj -> C:\disco D\software\introduccion a los logaritmos\TF\laberinto\x64\Debug\TF.exe

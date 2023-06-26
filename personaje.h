@@ -3,7 +3,7 @@
 #include "color.h"
 #include "enemigo.h"
 #include "agente.h"
-#include "bala.h"
+#include "bala.h" 
 
 using namespace System;
 using namespace std;
@@ -25,7 +25,7 @@ struct Personaje {
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
-    Bala* balas;
+    Bala* balas; 
     int numBalas; 
 };
 

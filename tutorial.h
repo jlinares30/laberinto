@@ -7,7 +7,9 @@
 #include "agente.h"
 #include "personaje.h"
 #include "mapaTuto.h"
+#include <cstdlib>
 
+using namespace System;
 
 
 //int posAliadoX = 25;
@@ -20,13 +22,18 @@ int tutoMain() {
     bool mapaDisparo = false;
     bool mapaVitaminas[20][120] = {}; // inicializa un mapa con todos los valores de la matriz en falso
     int contadorTotalVitaminasTuto = 0;
-
+    
 
     personaje->balas = new Bala[MAX_BALAS];
     personaje->numBalas = 0;
 
+    cout<< "\n\n\n\n\t\t\Bienvenido al tutorial de PowerSaver, tu objetivo sera llegar al final del mapa (parte blanca),\n\t\t\t\t\t usa las flechas direccionales para moverte\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t Pulse una tecla para continuar...";
+    getch();
+    system("cls");
     generarMapaTutoMovimiento(mapatuto);
     dibujarPersonaje(personaje, posX, posY);
+   
+    
 
     while (1) {
         if (kbhit()) {
@@ -71,7 +78,13 @@ int tutoMain() {
 
         Sleep(10);
     }
+    system("cls");
+    cout << "\n\n\n\n\t\t\t\Durante el juego, podras disparar pulsando la tecla D,\n\t\t esto ayudara a paralizar a los enemigos durante unos segundos para poder avanzar\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t Pulse una tecla para continuar...";
+    getch();
+    system("cls");
     generarMapaTutoMovimiento(mapatutoDisparo);
+    
+  
 
     while (2) {
         if (kbhit()) {
@@ -112,13 +125,19 @@ int tutoMain() {
         {
             posX = 0;
             posY = 1;
-            imprimirVidasTutorial(personaje);
+            
             break;
 
         }
         
         Sleep(10);
     }
+    asignarColor(14);
+    system("cls");
+    cout << "\n\n\n\n\t\t\t\Durante el juego, podras encontrar baterias,\n\t\t las cuales te daran una oportunidad mas en caso seas lastimado por los enemigos. \n\t\t\tPro tip: Los aliados abren puertas!\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t Pulse una tecla para continuar...";
+    getch();
+    system("cls");
+    imprimirVidasTutorial(personaje);
     generarMapaTutoMovimiento(mapatutoVitamina);
 
 

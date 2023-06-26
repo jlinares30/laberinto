@@ -10,10 +10,11 @@
 #include "mapa2.h"
 #include "mapa3.h"
 #include "mapa4.h"
+#pragma comment(lib, "Winmm.lib")
 
     Personaje* personaje = new Personaje();
     Enemigo* enemigo = new Enemigo();
-    Agente* agentes = new Agente[10];
+    Agente* agentes = new Agente[11];
     Bala* balas = new Bala[10];
     Aliado* aliado = new Aliado();
     int posX = 0; //110
@@ -42,9 +43,23 @@ void iniciarJuego() {
     bool mapaVitaminas[30][120] = {}; // inicializa un mapa con todos los valores de la matriz en falso
 
 
+
     personaje->balas = new Bala[MAX_BALAS];
     personaje->numBalas = 0;
 
+    sndPlaySound(TEXT("musica.wav"), SND_ASYNC | SND_FILENAME);
+
+    asignarColor(11);
+    cout << "\n\n\n\n\n\n\n\t\t\t\t\t\t\tP";
+    asignarColor(14);
+    cout << "er";
+    asignarColor(11);
+    cout << "u" << endl;
+    cout <<"\n\n\n\t\t\t\t\t\t\t" << char(219) << char(219); asignarColor(14); cout << char(219) << char(219); asignarColor(11); cout << char(219) << char(219) << endl;
+    cout <<"\t\t\t\t\t\t\t" <<char(219) << char(219); asignarColor(14); cout << char(219) << char(219); asignarColor(11); cout << char(219) << char(219) << endl;
+
+    _sleep(1500);
+    system("cls");
 
     generarMapa(mapa);
     imprimirVidas(personaje);
@@ -69,6 +84,11 @@ void iniciarJuego() {
     agentes[8].y = 15;
     agentes[9].x = 79;
     agentes[9].y = 23;
+    agentes[10].x = 79;
+    agentes[10].y = 3;
+
+   
+
 
     while (1) {
         if (kbhit()) {
@@ -110,7 +130,8 @@ void iniciarJuego() {
 
                 // Si el tiempo de inactividad llega a cero, reanudar el movimiento
                 if (agentes[i].tiempoInactividad == 0) {
-                    // se asigna nuevas velocidades al agente
+                    // Asignar nuevas velocidades al agente
+                    // Por ejemplo:
                     agentes[i].dx = 1;
                     agentes[i].dy = 1;
                 }
@@ -123,6 +144,20 @@ void iniciarJuego() {
 
         if (cambioMapa2)
         {
+            system("cls");
+            asignarColor(9);
+            cout << "\n\n\n\n\n\n\n\t\t\t\t\t\t\tMe";
+            asignarColor(14);
+            cout << "xi";
+            asignarColor(11);
+            cout << "co" << endl;
+            asignarColor(9);
+            cout << "\n\n\n\t\t\t\t\t\t\t" << char(219) << char(219); asignarColor(14); cout << char(219) << char(219); asignarColor(11); cout << char(219) << char(219) << endl;
+            asignarColor(9);
+            cout << "\t\t\t\t\t\t\t" << char(219) << char(219); asignarColor(14); cout << char(219) << char(219); asignarColor(11); cout << char(219) << char(219) << endl;
+
+            _sleep(1000);
+            system("cls");
             generarMapa(mapa2);
             posX = 0;
             posY = 1;
@@ -268,7 +303,7 @@ void iniciarJuego() {
 
                 // Si el tiempo de inactividad llega a cero, reanudar el movimiento
                 if (agentes[i].tiempoInactividad == 0) {
-                    // se asigna nuevas velocidades al agente
+                    // Asignar nuevas velocidades al agente
                     agentes[i].dx = 1;
                     agentes[i].dy = 1;
                 }
@@ -280,6 +315,18 @@ void iniciarJuego() {
 
         if (cambioMapa3)
         {
+            system("cls");
+            asignarColor(9);
+            cout << "\n\n\n\n\n\n\n\t\t\t\t\t\t\tNi";
+            asignarColor(14);
+            cout << "ger";
+            asignarColor(9);
+            cout << "ia" << endl;
+            cout << "\n\n\n\t\t\t\t\t\t\t" << char(219) << char(219); asignarColor(14); cout << char(219) << char(219); asignarColor(9); cout << char(219) << char(219) << endl;
+            cout << "\t\t\t\t\t\t\t" << char(219) << char(219); asignarColor(14); cout << char(219) << char(219); asignarColor(9); cout << char(219) << char(219) << endl;
+
+            _sleep(1000);
+            system("cls");
             generarMapa3(mapa3);
             posX = 0;
             posY = 1;
@@ -419,7 +466,7 @@ void iniciarJuego() {
 
                 // Si el tiempo de inactividad llega a cero, reanudar el movimiento
                 if (agentes[i].tiempoInactividad == 0) {
-                    // se asigna nuevas velocidades al agente
+                    // Asignar nuevas velocidades al agente
                     agentes[i].dx = 1;
                     agentes[i].dy = 1;
                 }
@@ -533,10 +580,12 @@ void iniciarJuego() {
     }
     if (ganador)
     {
+        sndPlaySound(NULL, SND_ASYNC);
+
         imprimir_mensaje_ganador();
-        getch();
     }
     if (juegoTerminado) {
+        sndPlaySound(NULL, SND_ASYNC);
         imprimir_mensaje_perdedor();
         getch();
     }

@@ -21,6 +21,20 @@ void mostrarMenu()
 {
     system("cls");
 
+    asignarColor(13);
+    cout << "\t\t\t\t\t\t\t ..-- - .. " << endl;
+    cout << "\t\t\t\t\t\t\t /       \\ " << endl;
+    cout << "\t\t\t\t\t\t\t|         | " << endl;
+    cout << "\t\t\t\t\t\t\t:         ; " << endl;
+    cout << "\t\t\t\t\t\t\t \\  \\~/  / " << endl;
+    cout << "\t\t\t\t\t\t\t  `, Y ,' " << endl;
+    asignarColor(7);
+    cout << "\t\t\t\t\t\t\t   |_|_| " << endl;
+    cout << "\t\t\t\t\t\t\t   |===| " << endl;
+    cout << "\t\t\t\t\t\t\t   |===| " << endl;
+    cout << "\t\t\t\t\t\t\t    \\_/ " << endl;
+
+
 
     asignarColor(8);
 
@@ -40,7 +54,7 @@ void mostrarMenu()
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "  2.";
     asignarColor(10); cout << " Tutorial         "; asignarColor(8); cout << char(186) << endl;
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "   3.";
-    asignarColor(10); cout << " Instrucciones   "; asignarColor(8); cout << char(186) << endl;
+    asignarColor(10); cout << " Historia        "; asignarColor(8); cout << char(186) << endl;
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "    4.";
     asignarColor(10); cout << " Creditos       "; asignarColor(8); cout << char(186) << endl;
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "     5.";
@@ -57,13 +71,9 @@ void mostrarMenu()
 void jugar() {
     iniciarJuego();
 }
-void mostrarHistoria() {
-    cout << "Historia del juego..." << endl;
-
-}
 
 void mostrarInstrucciones() {
-    char* texto = "En PowerSaver, seras el heroe de la energia sostenible. Tu mision es ampliar \n\t\tla infraestructura energetica en paises poco desarrollados. Enfrentaras obstaculos,\n\t\tenemigos y contaras con poderes y aliados para lograrlo. A medida que avanzas, el\n\t\tjuego se vuelve más desafiante, haciendo que la experiencia sea aun mas emocionante.\n\t\tPreparate para convertirte en el salvador de la energia sostenible en PowerPlanet.";
+    char* texto = "En PowerSaver, seras el heroe de la energia sostenible. Tu mision es recoger baterias \n\t\ty entregarla en sedes de paises poco desarrollados. Enfrentaras obstaculos,\n\t\tenemigos y aliados para lograrlo. A medida que avanzas, Power Saver se convierte \n\t\t mas desafiante, haciendo que la experiencia sea aun mas emocionante.\n\t\tPreparate para convertirte en el salvador de la energia sostenible en PowerPlanet.";
 
     cout << "\n\n\n";
     cout << "\t    -------------------------------------------------------------------------------" << endl;
@@ -105,9 +115,9 @@ int mainMenu()
         mostrarMenu();
 
 
-        cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
+        cout << "\n\n\n";
         asignarColor(5);
-        cout << "\t\t\t\t\t\t\t\t\t\t\t#########*#" << endl;
+        cout << "\t\t\t\t\t\t\t\t\t\t\t############" << endl;
         asignarColor(12);
         cout << "\t\t\t\t\t\t\t\t\t\t\tIngrese una opcion: "; cin >> opcion;
         system("cls");
@@ -117,33 +127,36 @@ int mainMenu()
         {
         case 1:
             jugar();
-            // Aquí puedes llamar a la función para empezar el juego
+            
             break;
         case 2:
             tutoMain();
             _getch();
             system("cls");
+            
             break;
         case 3:
             mostrarInstrucciones();
             _getch();
             system("cls");
+           
             break;
         case 4:
             mostrarCreditos();
             _getch();
             system("cls");
+            
             break;
         case 5:
             asignarColor(11);
-            cout << "Game Over" << endl;
+            cout << "\aGame Over" << endl;
             cout << "Saliendo del juego..." << endl;
             asignarColor(14);
 
             break;
         default:
             asignarColor(11);
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
+            cout << "\a\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
             cout << "\t\t\t\tOpcion invalida. Por favor, ingrese un numero valido." << endl;
             cout << "\t\t\t\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
             asignarColor(14);
