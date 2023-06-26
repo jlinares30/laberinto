@@ -3,7 +3,7 @@
 #include "color.h"
 #include "enemigo.h"
 #include "agente.h"
-#include "bala.h" // Agregar esta línea
+#include "bala.h"
 
 using namespace System;
 using namespace std;
@@ -19,13 +19,14 @@ struct Personaje {
     int posX;
     int posY;
     int contVidas = 3;
+    int contVidasTuto = 1;
     int posVidasX = 1;
     int posVidasY = 27;
     string cabeza = "/O\\";
     string cuerpo = "| |";
     string pies =   "|=|";
-    Bala* balas; // Agregar el atributo Bala* balas al struct
-    int numBalas; // Agregar el atributo numBalas para llevar cuenta de las balas
+    Bala* balas;
+    int numBalas; 
 };
 
 void dibujarPersonaje(Personaje* personaje, int posX, int posY) {
@@ -67,6 +68,25 @@ void imprimirVidas(Personaje* personaje) {
     asignarPosicion(personaje->posVidasX, personaje->posVidasY);
     cout << "HP: " << personaje->contVidas << " ";
     switch (personaje->contVidas)
+    {
+    case 1:
+        cout << "*    ";
+        break;
+    case 2:
+        cout << "* *  ";
+        break;
+    case 3:
+        cout << "* * *";
+        break;
+    default:
+        break;
+    }
+}
+void imprimirVidasTutorial(Personaje* personaje) {
+    asignarColor(13);
+    asignarPosicion(1, 20);
+    cout << "HP: " << personaje->contVidasTuto << " ";
+    switch (personaje->contVidasTuto)
     {
     case 1:
         cout << "*    ";

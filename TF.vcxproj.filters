@@ -65,6 +65,12 @@
     <ClInclude Include="agente.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="mapaTuto.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TF.cpp">

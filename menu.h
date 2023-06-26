@@ -5,6 +5,7 @@
 #include <windows.h>
 #include "color.h"
 #include "jugar.h"
+#include "tutorial.h"
 
 
 using namespace std;
@@ -37,7 +38,7 @@ void mostrarMenu()
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << " 1.";
     asignarColor(10); cout << " Jugar             "; asignarColor(8); cout << char(186) << endl;
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "  2.";
-    asignarColor(10); cout << " Historia         "; asignarColor(8); cout << char(186) << endl;
+    asignarColor(10); cout << " Tutorial         "; asignarColor(8); cout << char(186) << endl;
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "   3.";
     asignarColor(10); cout << " Instrucciones   "; asignarColor(8); cout << char(186) << endl;
     cout << "\t\t\t\t\t\t"; asignarColor(8); cout << char(186); asignarColor(13); cout << "    4.";
@@ -116,28 +117,22 @@ int mainMenu()
         {
         case 1:
             jugar();
-            _getch();
-
             // Aquí puedes llamar a la función para empezar el juego
             break;
         case 2:
-            mostrarHistoria();
+            tutoMain();
             _getch();
             system("cls");
-
-            // Aquí puedes mostrar la historia del juego
             break;
         case 3:
             mostrarInstrucciones();
             _getch();
             system("cls");
-            // Aquí puedes mostrar las instrucciones del juego
             break;
         case 4:
             mostrarCreditos();
             _getch();
             system("cls");
-            // Aquí puedes mostrar los créditos del juego
             break;
         case 5:
             asignarColor(11);

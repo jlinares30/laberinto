@@ -26,9 +26,6 @@
     int posAliado3Y = 18;
     int posAliado4X = 33;
     int posAliado4Y = 8;
-    int enemigoX;
-    int enemigoY;
-    // Generar posición inicial del enemigo
     int contadorTotalVitaminas = 0;
     int numVitaminasMapa1 = 2;
     int numVitaminasMapa2 = 3;
@@ -113,23 +110,15 @@ void iniciarJuego() {
 
                 // Si el tiempo de inactividad llega a cero, reanudar el movimiento
                 if (agentes[i].tiempoInactividad == 0) {
-                    // Asignar nuevas velocidades al agente
-                    // Por ejemplo:
+                    // se asigna nuevas velocidades al agente
                     agentes[i].dx = 1;
                     agentes[i].dy = 1;
                 }
             }
         }
-        /*for (int i = 0; i < personaje->numBalas; i++) {
-            moverBala(personaje->balas[i], mapa, agentes, numAgentes);
-        }*/
-
 
         dibujarPersonaje(personaje, posX, posY);
         dibujarAliado(aliado, posAliadoX, posAliadoY);
-
-
-        //movimientoEnemigoX(enemigo, enemigoX, enemigoY);
 
 
         if (cambioMapa2)
@@ -223,8 +212,8 @@ void iniciarJuego() {
                         {
                             personaje->contVidas++;
                         }
-                        imprimirVidas(personaje);
                         contadorTotalVitaminas++;
+                        imprimirVidas(personaje);
                         mapaVitaminas[mapaY][mapaX] = true; // si cualquier parte del personaje pasa por la coordenada de la vitamina, la misma coordenada en el mapa de la vitamina se pone en true y solo lo contabiliza una vez
                     }
                 }
@@ -270,9 +259,6 @@ void iniciarJuego() {
             }
         }
 
-        /*for (int i = 0; i < personaje->numBalas; i++) {
-            moverBala(personaje->balas[i], mapa2, personaje->numBalas, i, personaje->balas);
-        }*/
         for (int i = 0; i < personaje->numBalas; i++) {
             moverBala(personaje->balas[i], mapa2, personaje->numBalas, i, personaje->balas, agentes, numAgentes);
         }
@@ -282,8 +268,7 @@ void iniciarJuego() {
 
                 // Si el tiempo de inactividad llega a cero, reanudar el movimiento
                 if (agentes[i].tiempoInactividad == 0) {
-                    // Asignar nuevas velocidades al agente
-                    // Por ejemplo:
+                    // se asigna nuevas velocidades al agente
                     agentes[i].dx = 1;
                     agentes[i].dy = 1;
                 }
@@ -425,9 +410,6 @@ void iniciarJuego() {
             }
         }
 
-        /*for (int i = 0; i < personaje->numBalas; i++) {
-            moverBala(personaje->balas[i], mapa3, personaje->numBalas, i, personaje->balas);
-        }*/
         for (int i = 0; i < personaje->numBalas; i++) {
             moverBala(personaje->balas[i], mapa3, personaje->numBalas, i, personaje->balas, agentes, numAgentes);
         }
@@ -437,8 +419,7 @@ void iniciarJuego() {
 
                 // Si el tiempo de inactividad llega a cero, reanudar el movimiento
                 if (agentes[i].tiempoInactividad == 0) {
-                    // Asignar nuevas velocidades al agente
-                    // Por ejemplo:
+                    // se asigna nuevas velocidades al agente
                     agentes[i].dx = 1;
                     agentes[i].dy = 1;
                 }
@@ -448,14 +429,6 @@ void iniciarJuego() {
         dibujarPersonaje(personaje, posX, posY);
         dibujarAliado(aliado, posAliado3X, posAliado3Y);
         dibujarAliado(aliado, posAliado4X, posAliado4Y);
-
-        /*if (cambioMapa4)
-        {
-            generarMapa4(mapa4);
-            posX = 0;
-            posY = 11;
-            break;
-        }*/
 
         // movimiento del enemigo
         borrar_agente(&agentes[6]);
